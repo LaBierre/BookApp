@@ -1,9 +1,7 @@
 package com.example.standard.bookapp;
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.support.annotation.NonNull;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by vince on 21.03.2017.
@@ -42,7 +38,7 @@ public class BookAdapter extends ArrayAdapter<Book> {
 
         //Fit in the values in the items
         ImageView bookImage = (ImageView) convertView.findViewById(R.id.book_image);
-        if (position == 0) {
+        if (position == 0 || currentBook.getmSmallThumbnail().equals("")) {
             bookImage.setImageDrawable(currentBook.getThumbnail());
         } else {
             Glide.with(getContext()).load(currentBook.getmSmallThumbnail()).into(bookImage);

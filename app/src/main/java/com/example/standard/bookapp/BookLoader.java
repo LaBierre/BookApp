@@ -21,6 +21,7 @@ public class BookLoader extends AsyncTaskLoader<List<Book>> {
 
     @Override
     protected void onStartLoading() {
+
         forceLoad();
     }
 
@@ -29,9 +30,9 @@ public class BookLoader extends AsyncTaskLoader<List<Book>> {
         if (mUrl == null) {
             return null;
         }
-
         // Perform the network request, parse the response, and extract a list of earthquakes.
         List<Book> books = Utils.fetchBookData(getContext(), mUrl);
+
         return books;
     }
 }

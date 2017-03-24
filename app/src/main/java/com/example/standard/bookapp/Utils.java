@@ -28,7 +28,7 @@ public class Utils {
 
     private static final String LOG_TAG = Utils.class.getName();
 
-    public Utils(Context context) {
+    public Utils() {
 
     }
 
@@ -114,7 +114,7 @@ public class Utils {
      */
     public static List<Book> fetchBookData(Context context, String requestUrl) {
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

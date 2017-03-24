@@ -47,7 +47,7 @@ public class BookActivity extends AppCompatActivity implements LoaderManager.Loa
 
                 Book currentBook = mAdapter.getItem(position);
 
-                if (currentBook.getmWebReaderLink() != ""){
+                if (!currentBook.getmWebReaderLink().equals("")){
                     // Convert the String URL into a URI object (to pass into the Intent constructor)
                     Uri bookUri = Uri.parse(currentBook.getmWebReaderLink());
 
@@ -85,7 +85,7 @@ public class BookActivity extends AppCompatActivity implements LoaderManager.Loa
     public void onLoadFinished(Loader<List<Book>> loader, List<Book> books) {
         progressBar.setVisibility(View.GONE);
 
-        // Clear the adapter of previous earthquake data
+        // Clear the adapter of previous book data
         mAdapter.clear();
 
         if (books != null && !books.isEmpty()){

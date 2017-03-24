@@ -1,6 +1,5 @@
 package com.example.standard.bookapp;
 
-import android.content.Context;
 import android.graphics.drawable.Drawable;
 
 /**
@@ -12,6 +11,10 @@ public class Book {
     private String mTitle, mSubTitle, mAutor, mPublishedDate, mSmallThumbnail, mWebReaderLink;
 
     Drawable thumbnail;
+
+    public Book(){
+
+    }
 
     public Book(String mTitle, String mSubTitle, String mAutor,
                 String mPublishedDate, String mSmallThumbnail, String mWebReaderLink) {

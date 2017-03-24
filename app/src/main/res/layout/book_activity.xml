@@ -5,16 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
-    android:padding="@dimen/activity_main_margin"
     tools:context="com.example.standard.bookapp.BookActivity">
-    <!--Todo: wiederkehrendes in Colors, Styles und dimens auslagern-->
-
 
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" />
+        android:orientation="vertical"
+        android:padding="@dimen/activity_main_margin" />
 
     <ProgressBar
         android:id="@+id/progress_bar"
