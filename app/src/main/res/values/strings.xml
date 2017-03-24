@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Book App</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="no_books_available">No books available</string>
+    <string name="initial_text">
+        This Book App is linked with the web page of "Google Books". After entering a topic
+        in the given text field and clicking the SUBMIT Button, you get a List of available
+        books conveniant to the topic.
+        \n\n
+        Please enjoy the App and have a nice day.
+    </string>
+    <string name="topic_edit_text">Enter topic please</string>
+    <string name="submit_button">submit</string>
+    <string name="intent_key">topic</string>
+
+    <string name="published_item">Published Date</string>
+    <string name="autor_item">Autor</string>
+    <string name="titel_item">Titel</string>
+    <string name="subtitle_item">Subtitle</string>
+    <string name="internet_connection">No Internet Connection!</string>
+    <string name="malformed_exeption">"Problem building the URL "</string>
+    <string name="title_first_line">Title</string>
+    <string name="subtitle_first_line">Subtitle</string>
+    <string name="author_first_line">Author</string>
+    <string name="published_first_line">Published Date</string>
+    <string name="get_http">GET</string>
+    <string name="no_web_available">No Webside available</string>
+    <string name="error_resp_code">"Error response code: "</string>
+    <string name="io_exeption">Problem retrieving the book JSON results.</string>
+    <string name="utf_8">UTF-8</string>
+    <string name="io_exeption_http">Problem making the HTTP request.</string>
+    <string name="items_json">items</string>
+    <string name="volume_info_json">volumeInfo</string>
+    <string name="title_json">title</string>
+    <string name="subtitle_json">subtitle</string>
+    <string name="author_volume_json">authors</string>
+    <string name="published_json">publishedDate</string>
+    <string name="imagelinks_json">imageLinks</string>
+    <string name="smallthumbnails_json">smallThumbnail</string>
+    <string name="accessinfo_json">accessInfo</string>
+    <string name="infolink_json">infoLink</string>
+    <string name="webreaderlink_json">webReaderLink</string>
+    <string name="io_exepion_three">Problem parsing the book JSON results</string>
+
+</resources>
