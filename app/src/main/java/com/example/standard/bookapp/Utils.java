@@ -157,7 +157,7 @@ public class Utils {
         Book bookTwo = new Book(context.getResources().getString(R.string.title_first_line) ,
                 context.getResources().getString(R.string.subtitle_first_line),
                 context.getResources().getString(R.string.author_first_line),
-                context.getResources().getString(R.string.published_first_line), thumbnail, "");
+                context.getResources().getString(R.string.published_first_line), thumbnail);
         books.add(bookTwo);
 
         // Try to parse the JSON response string. If there's a problem with the way the JSON

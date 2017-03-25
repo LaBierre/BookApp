@@ -26,13 +26,12 @@ public class Book {
         this.mWebReaderLink = mWebReaderLink;
     }
 
-    public Book(String mTitle, String mSubTitle, String mAutor, String mPublishedDate, Drawable thumbnail, String mWebReaderLink) {
+    public Book(String mTitle, String mSubTitle, String mAutor, String mPublishedDate, Drawable thumbnail) {
         this.mTitle = mTitle;
         this.mSubTitle = mSubTitle;
         this.mAutor = mAutor;
         this.mPublishedDate = mPublishedDate;
         this.thumbnail = thumbnail;
-        this.mWebReaderLink = mWebReaderLink;
     }
 
     public Drawable getThumbnail(){

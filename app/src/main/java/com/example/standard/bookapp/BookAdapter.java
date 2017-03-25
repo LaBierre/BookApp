@@ -19,9 +19,16 @@ import java.util.ArrayList;
 
 public class BookAdapter extends ArrayAdapter<Book> {
 
+    ViewHolderItem viewHolder;
+
 
     public BookAdapter(Context context, ArrayList<Book> objects) {
         super(context, 0, objects);
+    }
+
+    private static class ViewHolderItem {
+        TextView title, subTitle, authors, publishedDate;
+        ImageView bookImage;
     }
 
     @NonNull
@@ -31,30 +38,37 @@ public class BookAdapter extends ArrayAdapter<Book> {
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(
                     R.layout.list_item, parent, false);
+
+            viewHolder = new ViewHolderItem();
+
+            viewHolder.title = (TextView) convertView.findViewById(R.id.title_text);
+            viewHolder.subTitle = (TextView) convertView.findViewById(R.id.subtitle_text);
+            viewHolder.authors = (TextView) convertView.findViewById(R.id.author_text);
+            viewHolder.publishedDate = (TextView) convertView.findViewById(R.id.published_text);
+            viewHolder.bookImage = (ImageView)  convertView.findViewById(R.id.book_image);
+
+            // store the holder with the view
+            convertView.setTag(viewHolder);
+        }else{
+            // we've just avoided calling findViewById() on resource everytime
+            // just use the viewHolder
+            viewHolder = (ViewHolderItem) convertView.getTag();
         }
 
         // Get the {@link Word} object located at this position in the list
         Book currentBook = getItem(position);
 
         //Fit in the values in the items
-        ImageView bookImage = (ImageView) convertView.findViewById(R.id.book_image);
-        if (position == 0 || currentBook.getmSmallThumbnail().equals("")) {
-            bookImage.setImageDrawable(currentBook.getThumbnail());
-        } else {
-            Glide.with(getContext()).load(currentBook.getmSmallThumbnail()).into(bookImage);
+        if (currentBook.getmSmallThumbnail() == null || currentBook.getmSmallThumbnail().equals("")) {
+            viewHolder.bookImage.setImageDrawable(currentBook.getThumbnail());
+        } else if (currentBook.getmSmallThumbnail() != null && !currentBook.getmSmallThumbnail().equals("")){
+            Glide.with(getContext()).load(currentBook.getmSmallThumbnail()).into(viewHolder.bookImage);
         }
 
-        TextView title = (TextView) convertView.findViewById(R.id.title_text);
-        title.setText(currentBook.getmTitle());
-
-        TextView subTitle = (TextView) convertView.findViewById(R.id.subtitle_text);
-        subTitle.setText(currentBook.getmSubTitle());
-
-        TextView authors = (TextView) convertView.findViewById(R.id.author_text);
-        authors.setText(currentBook.getmAutor());
-
-        TextView publishedDate = (TextView) convertView.findViewById(R.id.published_text);
-        publishedDate.setText(currentBook.getmPublishedDate());
+        viewHolder.title.setText(currentBook.getmTitle());
+        viewHolder.subTitle.setText(currentBook.getmSubTitle());
+        viewHolder.authors.setText(currentBook.getmAutor());
+        viewHolder.publishedDate.setText(currentBook.getmPublishedDate());
 
         return convertView;
     }
